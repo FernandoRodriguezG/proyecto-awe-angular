@@ -1,0 +1,17 @@
+<h3>
+    Mis series y peliculas vistas
+</h3>
+
+<button type="button" (click)="showContent()">Mostrar mi lista</button>
+        <span *ngIf="contentArray">
+            <ul>
+                <li *ngFor="let c of contentArray">
+                    <p>{{c.name}}</p>
+                    <p>Donde la vi: {{c.platform}}</p>
+                    <p > Calificación que le doy: {{c.Score}}</p>
+                    <p *ngIf="c.season==0">N/A</p>
+                    <p *ngIf="c.season!=0">Temporada que vi: {{c.season}}</p>
+                    <p>{{c.type}}</p>
+                </li>
+            </ul>
+        </span>
